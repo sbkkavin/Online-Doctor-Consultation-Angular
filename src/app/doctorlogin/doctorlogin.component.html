@@ -1,0 +1,31 @@
+
+<h2>Doctor login</h2>
+<div class="doctor-login-form">
+    <small style="color: red;">{{msg}}</small>
+    <form #doctorloginform="ngForm" (submit)="doctorLogin(doctorloginform.value)">
+        <input type="number" ngModel name="docid" placeholder="Doctor id" ><br>
+        <input type="password" ngModel name="docpass" placeholder="Password"><br>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+
+<!-- <router-outlet></router-outlet> -->
+<!-- <h2>Doctor registration</h2>
+<div class="doctor-register">
+    <form #doctorregister="ngForm" (submit)="doctorRegister(doctorregister.value)">
+        <input type="text" ngModel name="doctor_name" placeholder="Name"><br>
+        <input type="text" ngModel name="specialization" placeholder="specialization"><br>
+        <input type="number" ngModel name="docid" placeholder="Doctor id"><br>
+        <input type="password" ngModel name="docpass" placeholder="password"><br>
+        <button type="submit">Register</button>
+    </form>
+</div> -->
+
+<!-- 
+docid!:number;
+doctor_name!:string;
+specialization!:string;
+slot!:number;
+fees!:number;
+docpass!:string; -->

@@ -1,0 +1,22 @@
+<h3>Welcome, {{validPt.patient_name}}</h3>
+<h3> {{validPt.phoneno}}</h3>
+
+<h2>Booking</h2>
+<button (click)="getDoctors()">View all Doctors</button>
+<div class="all-doctors">
+    <table border="2px">
+        <tr><th>Doctor id</th><th>Name</th><th>specialization</th><th>slots</th><th>Fees</th>
+            <th>Password</th><th>Timing</th></tr>
+            <tr *ngFor="let d of allDoctors">
+                <td>{{d.docid}}</td><td>{{d.doctor_name}}</td><td>{{d.specialization}}</td><td>{{d.slots}}</td>
+                <td>{{d.fees}}</td><td>{{d.docpass}}</td><td>{{d.timing}}</td>
+            </tr>
+    </table>
+</div>
+
+<div class="doctor-booking">
+    <form #bookingrq="ngForm" (submit)="bookingRequest(bookingrq.value)">
+        <input type="number" ngModel name="adocid" placeholder="Enter the doctors id to book">
+        <button type="submit">Request booking</button>
+        </form>
+</div>

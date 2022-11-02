@@ -1,0 +1,22 @@
+<h2>Patient Login</h2>
+<div class="patient-login-form">
+    <small style="color: red;">{{msg}}</small>
+    <form #patientloginform="ngForm" (submit)="patientLogin(patientloginform.value)">
+        <input type="number" ngModel name="pid" placeholder="Patient Id" ><br>
+        <input type="password" ngModel name="patient_password" placeholder="Password"><br>
+        <button type="submit">Login</button>
+    </form>
+</div>
+<br>
+<br>
+<!-- <h2>Patient registration</h2>
+<div class="patient-register">
+    <form #patientregister="ngForm" (submit)="patientRegister(patientregister.value)">
+        <input type="text" ngModel name="patient_name" placeholder="Name"><br>
+        <input type="text" ngModel name="phoneno" placeholder="phone number"><br>
+        <input type="number" ngModel name="pid" placeholder="Patient id"><br>
+        <input type="password" ngModel name="patient_password" placeholder="password">
+        <button type="submit">Register</button>
+    </form>
+</div> -->
+

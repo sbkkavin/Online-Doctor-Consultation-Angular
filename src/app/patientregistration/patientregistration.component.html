@@ -1,0 +1,10 @@
+<h2>Patient registration</h2>
+<div class="patient-register">
+    <form #patientregister="ngForm" (submit)="patientRegister(patientregister.value)">
+        <input type="text" ngModel name="patient_name" placeholder="Name"><br>
+        <input type="text" ngModel name="phoneno" placeholder="phone number"><br>
+        <input type="number" ngModel name="pid" placeholder="Patient id"><br>
+        <input type="password" ngModel name="patient_password" placeholder="password"><br>
+        <button type="submit">Register</button>
+    </form>
+</div>
