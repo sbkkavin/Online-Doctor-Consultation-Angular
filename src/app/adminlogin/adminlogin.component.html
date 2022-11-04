@@ -1,4 +1,4 @@
-<h2>Admin login</h2>
+<!-- <h2>Admin login</h2>
 
 <div class="doctor-login-form">
     <small style="color: red;">{{msg}}</small>
@@ -7,10 +7,18 @@
         <input type="password" ngModel name="adpassword" placeholder="Password"><br>
         <button type="submit">Login</button>
     </form>
+</div> -->
+
+
+<div class="login-page">
+    <h2>Admin login</h2>
+    <div class="form">
+        <small style="color: red;">{{msg}}</small>
+        <form class="login-form" #adminloginform="ngForm" (submit)="adminLogin(adminloginform.value)">
+            <input type="number" ngModel name="aid" placeholder="Admin id" ><br>
+            <input type="password" ngModel name="adpassword" placeholder="Password"><br>
+            <button type="submit">Login</button>
+        </form>
+  
+    </div>
 </div>
-
-
-<!-- @Id
-int aid;
-String adminname;
-String  adpassword; -->

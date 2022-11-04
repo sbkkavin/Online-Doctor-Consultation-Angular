@@ -1,22 +1,78 @@
-<h3>Welcome, {{validPt.patient_name}}</h3>
-<h3> {{validPt.phoneno}}</h3>
 
-<h2>Booking</h2>
-<button (click)="getDoctors()">View all Doctors</button>
-<div class="all-doctors">
-    <table border="2px">
+
+
+
+<h3 class="welcome-message">Welcome, {{validPt.patient_name}}</h3>
+<p *ngIf="validPt.adocid==0;then ifBlock else elseBlock "></p>
+<ng-template #ifBlock>
+    <p class="booking-message">You have no booking</p>
+</ng-template>
+<ng-template #elseBlock>
+    <h4 *ngFor="let dr of allDoctors">
+        <h4 *ngIf="dr.docid==validPt.adocid"> 
+            <p class="booking-message">You have a booking with {{dr.doctor_name}} ({{dr.specialization}})<br>
+                Timing: {{dr.timing}}</p>
+            <!-- <p class="booking-message"></p> -->
+        </h4>
+       
+    </h4>
+    
+</ng-template>
+
+<h2>Registered Doctors</h2>
+<!-- <button (click)="getDoctors()">View all Doctors</button> -->
+Search:<input class="search-textbox" type="text" placeholder="search doctors" [(ngModel)]="searchkey">
+<br><br>
+<div class="all-doctors" >
+    <table border="2px" class="patient-table">
         <tr><th>Doctor id</th><th>Name</th><th>specialization</th><th>slots</th><th>Fees</th>
-            <th>Password</th><th>Timing</th></tr>
-            <tr *ngFor="let d of allDoctors">
-                <td>{{d.docid}}</td><td>{{d.doctor_name}}</td><td>{{d.specialization}}</td><td>{{d.slots}}</td>
-                <td>{{d.fees}}</td><td>{{d.docpass}}</td><td>{{d.timing}}</td>
-            </tr>
+            <th>Password</th><th>Timing</th><th>Location</th></tr>
+                <ng-container *ngFor="let d of allDoctors">
+                    <tr *ngIf="d.specialization.toLocaleLowerCase().includes(searchkey)">
+                        <td>{{d.docid}}</td><td>{{d.doctor_name}}</td><td>{{d.specialization}}</td><td>{{d.slots}}</td>
+                        <td>{{d.fees}}</td><td>{{d.docpass}}</td><td>{{d.timing}}</td><td><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126271.88556177606!2d76.85412598243927!3d8.499726691936285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05bbb805bbcd47%3A0x15439fab5c5c81cb!2sThiruvananthapuram%2C%20Kerala!5e0!3m2!1sen!2sin!4v1667539698235!5m2!1sen!2sin" width="100" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></td>
+                      </tr>
+
+                </ng-container>
+               
+            
+       
     </table>
 </div>
 
-<div class="doctor-booking">
+<!-- Previous doctor booking fn below -->
+<!-- <div class="doctor-booking">
     <form #bookingrq="ngForm" (submit)="bookingRequest(bookingrq.value)">
         <input type="number" ngModel name="adocid" placeholder="Enter the doctors id to book">
         <button type="submit">Request booking</button>
         </form>
+</div> -->
+
+<h3>Booking</h3>
+<p>Enter the Doctor id to request a booking <br>
+    Enter 0 to cancel a booking</p>
+
+
+<div class="doctor-booking-newfn">
+    <form #nbookingrq="ngForm" (submit)="nBookingRequest(nbookingrq.value)">
+        <input class="custom-textbox" type="number" ngModel name="docid" placeholder="Enter the doctors id to book"><br><br>
+        <button type="submit" class="button-21">Request booking</button>
+        </form>
 </div>
+<br>
+<br>
+
+
+<div class="patient-feedback">
+    <h3>Feedback</h3>
+    <form #feedbackform="ngForm" (submit)="giveFeedback(feedbackform.value)">
+        <input class="custom-textbox" type="number" ngModel name="docid" placeholder="Doctor id"><br>
+        <input class="feedback-textbox" type="text" ngModel name="feedback" placeholder="Feedback"><br><br>
+        <button type="submit" class="button-21">Submit</button>
+    </form>
+</div>
+
+
+
+
+        

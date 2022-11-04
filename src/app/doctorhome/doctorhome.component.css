@@ -1,0 +1,50 @@
+.patient-table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 40%;
+  }
+  
+  .patient-table td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .patient-table tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .patient-table tr:hover {background-color: #ddd;}
+  
+  .patient-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+
+  .feedback-table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 20%;
+  }
+  
+  .feedback-table td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .feedback-table tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .feedback-table tr:hover {background-color: #ddd;}
+  
+  .feedback-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  .welcome-message{
+    font-family: Verdana;
+  }

@@ -1,0 +1,208 @@
+.patient-table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+  }
+  
+  .patient-table td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .patient-table tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .patient-table tr:hover {background-color: #ddd;}
+  
+  .patient-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+
+  .welcome-message{
+    font-family: Verdana;
+  }
+
+  .booking-message{
+    font-family:Century Gothic;
+
+  }
+ 
+
+
+
+  /* new additions */
+
+
+
+
+/* CSS */
+.button-21 {
+  align-items: center;
+  appearance: none;
+  background-color: #3EB2FD;
+  background-image: linear-gradient(1deg, #4ffd5b, #5cb131 99%);
+  background-size: calc(100% + 20px) calc(100% + 20px);
+  border-radius: 100px;
+  border-width: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: CircularStd,sans-serif;
+  font-size: 1rem;
+  height: 28px;
+  justify-content: center;
+  line-height: 1.5;
+  padding: 6px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color .2s,background-position .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.button-21:active,
+.button-21:focus {
+  outline: none;
+}
+
+.button-21:hover {
+  background-position: -20px -20px;
+}
+
+.button-21:focus:not(:active) {
+  box-shadow: rgba(40, 170, 255, 0.25) 0 0 0 .125em;
+}
+
+
+
+
+.custom-textbox{box-shadow: inset #abacaf 0 0 0 2px;
+  border: 0;
+  background: rgba(0, 0, 0, 0);
+  appearance: none;
+  width: 20%;
+  position: relative;
+  border-radius: 3px;
+  padding: 9px 12px;
+  line-height: 1.4;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: 400;
+  height: 10px;
+  transition: all .2s ease;
+
+
+}
+  
+  .custom-textbox:hover{
+      box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 2px;
+  }
+  .custom-textbox:focus{
+      background: #fff;
+      outline: 0;
+      box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 3px;
+  }
+
+
+
+
+  .feedback-textbox{box-shadow: inset #abacaf 0 0 0 2px;
+    border: 0;
+    background: rgba(0, 0, 0, 0);
+    appearance: none;
+    width: 20%;
+    position: relative;
+    border-radius: 3px;
+    padding: 9px 12px;
+    line-height: 1.4;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 400;
+    height: 60px;
+    transition: all .2s ease;
+  
+  
+  }
+    
+    .feedback-textbox:hover{
+        box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 2px;
+    }
+    .feedback-textbox:focus{
+        background: #fff;
+        outline: 0;
+        box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 3px;
+    }
+
+
+
+      .feedback-textbox{box-shadow: inset #abacaf 0 0 0 2px;
+    border: 0;
+    background: rgba(0, 0, 0, 0);
+    appearance: none;
+    width: 20%;
+    position: relative;
+    border-radius: 3px;
+    padding: 9px 12px;
+    line-height: 1.4;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 400;
+    height: 60px;
+    transition: all .2s ease;
+  
+  
+  }
+    
+    .feedback-textbox:hover{
+        box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 2px;
+    }
+    .feedback-textbox:focus{
+        background: #fff;
+        outline: 0;
+        box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 3px;
+    }
+
+
+  
+  
+    .search-textbox{box-shadow: inset #abacaf 0 0 0 2px;
+      border: 0;
+      background: rgba(0, 0, 0, 0);
+      appearance: none;
+      width: 8%;
+      position: relative;
+      border-radius: 3px;
+      padding: 9px 12px;
+      line-height: 1.4;
+      color: rgb(0, 0, 0);
+      font-size: 16px;
+      font-weight: 400;
+      height: 10px;
+      transition: all .2s ease;
+    
+    
+    }
+      
+      .search-textbox:hover{
+          box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 2px;
+      }
+      .search-textbox:focus{
+          background: #fff;
+          outline: 0;
+          box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 3px;
+      }
+  
+  
+  
+ 

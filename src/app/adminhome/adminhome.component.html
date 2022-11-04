@@ -1,21 +1,22 @@
 <h3>Welcome, {{validAdmin.adminname}}</h3><br>
 <h4>Patients Registered</h4>
-<button (click)="getPatients()">View Patients</button>
+<!-- <button (click)="getPatients()">View Patients</button> -->
 
-<div class="all-patient">
-    <table border="2px">
+<div class="all-patient" >
+    <table class="patient-table" >
         <tr><th>Patient id</th><th>Patient name</th><th>Phone number</th><th>Assigned doctor id</th>
         <th>Patient password</th></tr>
         <tr *ngFor="let p of allpatients ">
             <td>{{p.pid}}</td><td>{{p.patient_name}}</td><td>{{p.phoneno}}</td><td>{{p.adocid}}</td><td>{{p.patient_password }}</td>
         </tr>
     </table>
+    <button (click)="getPatients()">Update table</button>
 </div>
 
 <h4>Doctors registered</h4>
-<button (click)="getDoctors()">View Doctors</button>
+<!-- <button (click)="getDoctors()">View Doctors</button> -->
 <div class="all-doctors">
-    <table border="2px">
+    <table  class="patient-table">
         <tr><th>Doctor id</th><th>Name</th><th>specialization</th><th>slots</th><th>Fees</th>
             <th>Password</th><th>Timing</th></tr>
             <tr *ngFor="let d of allDoctors">
@@ -25,7 +26,18 @@
     </table>
 </div>
 
+<h3>Patient Booking Requests</h3>
+<p>Click Approve twice to confirm booking</p>
 
+<div class="patient-request-approval">
+    <table   class="patient-table">
+        <tr><th>Patient ID</th><th>Requested Doctor ID</th><th>Action</th></tr>
+        <tr *ngFor="let br of allBookingRequest">
+            <td>{{br.pid}}</td><td>{{br.docid}}</td><td><button class="approve-button" (click)="bRequestParam(br.pid,br.docid)">Approve</button>  <button class="remove-button" (click)="deleteRequest(br)">Remove</button></td>
+            
+        </tr>
+    </table>
+</div>
 <!-- docid!:number;
 doctor_name!:string;
 specialization!:string;

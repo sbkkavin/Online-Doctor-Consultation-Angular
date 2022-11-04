@@ -1,5 +1,6 @@
 <h2>Patient registration</h2>
 <div class="patient-register">
+    <small style="color: red;">{{msg}}</small>
     <form #patientregister="ngForm" (submit)="patientRegister(patientregister.value)">
         <input type="text" ngModel name="patient_name" placeholder="Name"><br>
         <input type="text" ngModel name="phoneno" placeholder="phone number"><br>

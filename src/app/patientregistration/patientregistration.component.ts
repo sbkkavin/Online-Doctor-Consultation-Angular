@@ -13,6 +13,7 @@ export class PatientregistrationComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  msg:string="";
   registeredPatient!:Patient;
   patientRegister(newPatientReg:Patient){
     console.log(newPatientReg);
@@ -20,7 +21,11 @@ export class PatientregistrationComponent implements OnInit {
     this.ploginservice.registerPatient(newPatientReg).subscribe((data)=>{
       this.registeredPatient=data;
       console.log(data);
-
+      this.msg="Success"
+      
+    },
+    (error)=>{
+      this.msg="Patient with ID Exist Try using a Different ID"
     });
   }
 

@@ -1,5 +1,5 @@
-<h2>Patient Login</h2>
-<div class="patient-login-form">
+<!-- <h2>Patient Login</h2> -->
+<!-- <div class="patient-login-form">
     <small style="color: red;">{{msg}}</small>
     <form #patientloginform="ngForm" (submit)="patientLogin(patientloginform.value)">
         <input type="number" ngModel name="pid" placeholder="Patient Id" ><br>
@@ -8,7 +8,7 @@
     </form>
 </div>
 <br>
-<br>
+<br> -->
 <!-- <h2>Patient registration</h2>
 <div class="patient-register">
     <form #patientregister="ngForm" (submit)="patientRegister(patientregister.value)">
@@ -20,3 +20,16 @@
     </form>
 </div> -->
 
+
+
+<div class="login-page">
+    <h2>Patient Login</h2>
+    <div class="form">
+        <small style="color: red;">{{msg}}</small>
+        <form class="login-form" #patientloginform="ngForm" (submit)="patientLogin(patientloginform.value)">
+            <input type="number" ngModel name="pid" placeholder="Patient Id" ><br>
+            <input type="password" ngModel name="patient_password" placeholder="Password"><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>

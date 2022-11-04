@@ -1,1 +1,24 @@
-<p>Welcome {{loggedDoc.doctor_name}}</p>
+<h3 class="welcome-message">Welcome, {{loggedDoc.doctor_name}}</h3>
+
+<h3>Patients Booked</h3>
+
+    <!-- <button (click)="getPatients()"></button> -->
+    <table class="patient-table">
+        <tr><th>Patient ID</th><th>Patient Name</th><th>Phone number</th></tr>
+        <tr *ngFor="let bp of bookedPatients">
+            <td>{{bp.pid}}</td><td>{{bp.patient_name}}</td><td>{{bp.phoneno}}</td>
+
+        </tr>
+
+    </table>
+
+<div class="patient-feedback">
+    <h2>Patient Feedbacks</h2>
+    <table class="feedback-table">
+        <tr><th>Patient ID</th><th>Feedback</th></tr>
+        <tr *ngFor="let pf of patientFeedback">
+            <td>{{pf.pid}}</td><td>{{pf.feedback}}</td>
+        </tr>
+    </table>
+</div>    
+

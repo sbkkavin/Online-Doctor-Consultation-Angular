@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Doctor } from '../models/doctor';
+import { Feedback } from '../models/feedback';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,10 @@ validDoc!:Doctor;
   doctorRegister(nDoc:Doctor):Observable<Doctor>{
     return this.http.post<Doctor>(this.url1,nDoc)
   }
+  url2:string="http://localhost:8080/viewfeedback";
+  getFeedback(doc:Doctor):Observable<Feedback[]>{
+   return  this.http.post<Feedback[]>(this.url2,doc);
+    }
 
 }
 

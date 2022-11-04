@@ -14,10 +14,14 @@ export class DoctorregistrationComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+  msg:string=""
   doctorRegister(newDoc:Doctor){
     this.dlogservice.doctorRegister(newDoc).subscribe((data)=>{
+      this.msg="Success"
       console.log(data);
+    },
+    (error)=>{
+      this.msg="Doctor with same Id Exitst!!, use a Different ID"
     });
   }
 

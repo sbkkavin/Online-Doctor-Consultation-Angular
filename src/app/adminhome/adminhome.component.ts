@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { BookingRequest } from '../models/booking-request';
 import { Doctor } from '../models/doctor';
 import { Hospitaladmin } from '../models/hospitaladmin';
 import { Patient } from '../models/patient';
 import { AdminloginService } from '../services/adminlogin.service';
+import { BookingrequestService } from '../services/bookingrequest.service';
+import { PatientloginService } from '../services/patientlogin.service';
 
 @Component({
   selector: 'app-adminhome',
@@ -11,8 +14,10 @@ import { AdminloginService } from '../services/adminlogin.service';
 })
 export class AdminhomeComponent implements OnInit {
 
-  constructor(private alogservice:AdminloginService) { }
+  constructor(private alogservice:AdminloginService,private brService:BookingrequestService,private pls:PatientloginService) { }
 validAdmin!:Hospitaladmin;
+allBookingRequest:BookingRequest[]=[];
+allpatients!:Patient[];
   ngOnInit(): void {
     this.validAdmin=this.alogservice.getAdmin()
    
@@ -21,10 +26,20 @@ validAdmin!:Hospitaladmin;
       console.log(this.allDoctors)
     });
     
-    
+    this.brService.allRequests().subscribe((data)=>{
+      this.allBookingRequest=data;
+    })
+
+    this.alogservice.getAllPatients().subscribe((data)=>{
+      this.allpatients=data;
+      console.log(this.allpatients)
+
+    });
+
+
 
   }
-  allpatients!:Patient[];
+  
 
   getPatients(){
     this.alogservice.getAllPatients().subscribe((data)=>{
@@ -42,6 +57,45 @@ validAdmin!:Hospitaladmin;
   }
 
 
+
+getAllRequest(){
+  this.brService.allRequests().subscribe((data)=>{
+    this.allBookingRequest=data;
+  })
+}
+// reqPatient!:Patient;
+resPatient!:Patient;
+pid!:number;
+bookingConfirmed!:Patient;
+
+bRequestParam(rPid:number,rDocid:number){
+  console.log("pid:"+rPid+"  docid:"+rDocid);
+
+this.pid=rPid;
+console.log(this.pid);
+this.brService.getPatientById(this.pid).subscribe((data)=>{
+  this.resPatient=data;
+  console.log("response patient:"+this.resPatient.patient_name);
+});
+this.resPatient.adocid=0;
+this.resPatient.adocid=rDocid;
+console.log("assigned docid"+this.resPatient.adocid)
+
+this.pls.newBooking(this.resPatient).subscribe((data)=>{
+         this.bookingConfirmed=data;
+         console.log(this.bookingConfirmed);
+     });
+
+
+
+}
+
+deleteRequest(dbookingRq:BookingRequest){
+
+  this.brService.deleteBookingRequest(dbookingRq).subscribe((data)=>{
+    this.allBookingRequest=data;
+  });
+}
 
 
 
